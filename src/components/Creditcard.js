@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { format } from 'date-fns';
+import Thankyou from './Thankyou';
 
 const Creditcard = () => {
   const [name, setName] = useState('');
@@ -112,29 +113,10 @@ const Creditcard = () => {
             Confirm
           </button>
         </form>
-        <div className='thank  hidden'>
-          <img src='../images/icon-complete.svg' alt='' />
-          <h1>Thank You !</h1>
-          <p>We've added your card details</p>
-          <button>Continue</button>
-        </div>
-        {/* {submit && <ThankYou setSubmit={setSubmit} />} */}
+        <Thankyou />
       </div>
     </div>
   );
 };
-function ThankYou({ setSubmit }) {
-  // console.log('renderd thank you');
-  return (
-    <>
-      <div className='thank '>
-        <img src='../images/icon-complete.svg' alt='' />
-        <h1>Thank You !</h1>
-        <p>We've added your card details</p>
-        <button onClick={() => setSubmit(false)}>Continue</button>
-      </div>
-    </>
-  );
-}
 
 export default Creditcard;
